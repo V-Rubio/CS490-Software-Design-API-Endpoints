@@ -36,13 +36,39 @@ async function getStudentInfo(UCID) {
 async function updateStudentInfo(UCID) {
   try {
     const response = await axios.put(`https://student-info-api.netlify.app/.netlify/functions/submit_student_info?UCID=${UCID}`, {
-        last_name:"Rubio"
+        UCID:"vsg3",
+        first_name:"Victoria",
+        last_name:"Rubio",
+        github_username:"V-Rubio",
+        discord_username:"vi.rubio",
+        favorite_language:"JavaScript",
+        favorite_cartoon:"Avatar the Last Airbender",
+        movie_or_game_or_book:"1984 by George Orwell"
     });
     console.log('PUT Response:', response.data);
   } catch (error) {
     console.error('PUT Error:', error.message);
   }
 }
+
+async function updateTestStudentInfo(UCID) {
+    try {
+      const response = await axios.put(`https://student-info-api.netlify.app/.netlify/functions/submit_student_info?UCID=${UCID}`, {
+          UCID:"vsg3",
+          first_name:"Victoria-Test",
+          last_name:"Rubio",
+          github_username:"V-Rubio",
+          discord_username:"vi.rubio",
+          favorite_language:"JavaScript",
+          favorite_cartoon:"Avatar the Last Airbender",
+          movie_or_game_or_book:"1984 by George Orwell"
+      });
+      console.log('PUT Response:', response.data);
+    } catch (error) {
+      console.error('PUT Error:', error.message);
+    }
+  }
+
 
 // DELETE
 async function deleteStudentInfo(UCID) {
@@ -62,6 +88,7 @@ getStudentInfo('sgl24');
 createStudentInfo();
 getStudentInfo('vsg3');
 updateStudentInfo('vsg3');
+updateTestStudentInfo('vsg3');
 deleteStudentInfo('vsg3');
 
 */
