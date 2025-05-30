@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-// CREATE: POST your info
+// CREATE
 async function createStudentInfo() {
   try {
     const response = await axios.post(
@@ -22,7 +22,7 @@ async function createStudentInfo() {
   }
 }
 
-// READ: Example with placeholder API
+// READ
 async function getStudentInfo(UCID) {
   try {
     const response = await axios.get(`https://student-info-api.netlify.app/.netlify/functions/submit_student_info?UCID=${UCID}`);
@@ -32,7 +32,7 @@ async function getStudentInfo(UCID) {
   }
 }
 
-// UPDATE: Simulate PUT request
+// UPDATE
 async function updateStudentInfo(UCID) {
   try {
     const response = await axios.put(`https://student-info-api.netlify.app/.netlify/functions/submit_student_info?UCID=${UCID}`, {
@@ -44,7 +44,7 @@ async function updateStudentInfo(UCID) {
   }
 }
 
-// DELETE: Simulate DELETE request
+// DELETE
 async function deleteStudentInfo(UCID) {
   try {
     const response = await axios.delete(`https://student-info-api.netlify.app/.netlify/functions/submit_student_info?UCID=${UCID}`);
